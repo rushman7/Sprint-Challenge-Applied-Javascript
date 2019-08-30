@@ -22,7 +22,6 @@ const cardDiv = document.querySelector('.cards-container');
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
   .then(res => {
-    console.log((res.data.articles))
     let data = Object.values(res.data.articles)
     for (let i = 0; i < data.length;i++) {
       data[i].map(item => cardDiv.appendChild(Card(item)))
